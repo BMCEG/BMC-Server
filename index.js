@@ -51,7 +51,7 @@ app.use('/api/', express.static('images/gallery'))
 app.use('/api/', express.static('images/trainers'))
 app.use('/api/', express.static('data/resumes'))
 
-const CONNECTION_URL = 'mongodb+srv://bmcWebsiteProd:XAhBNptS4HbNfjQv@cluster0.druxa.mongodb.net/bmc-website?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://bmcWebsiteProd:XAhBNptS4HbNfjQv@cluster0.druxa.mongodb.net/bmc-website-prod?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
