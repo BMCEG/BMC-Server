@@ -9,6 +9,11 @@ const courseSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    company: {
+        type: String,
+        required: true,
+        enum: ['BMC', 'E-Wings']
+    },
     description: {
         type: String,
         required: true
