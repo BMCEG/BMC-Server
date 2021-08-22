@@ -10,7 +10,7 @@ const JWT_SECRET =
 
 export const getCourse = async (req, res, next) => {
     const { courseName } = req.params;
-    
+
     const course = await Course.findOne({ title: courseName }).populate("trainer");
     if (!course) {
         next(ApiError.badRequest("Couldnt find data for the entered courseName"));
@@ -39,9 +39,12 @@ export const getCourseByID = async (req, res, next) => {
 };
 export const getCourses = async (req, res, next) => {
     const { company } = req.query;
-
-    console.log(req.query)
-    const courses = await Course.find({ company: company }).populate("trainer");
+    let courses = [];
+    if (company === 'all') {
+        courses = await Course.find({}).populate("trainer");
+    } else {
+        courses = await Course.find({ company: company }).populate("trainer");
+    }
     res.status(200).json(courses);
 };
 
