@@ -1,5 +1,6 @@
 import { ApiError } from "../middlewares/apiError.js";
 import JobApplication from "../models/jobApplications.js";
+import JoinApplication from "../models/joinApplications.js";
 import moment from 'moment';
 import Job from "../models/jobs.js";
 
@@ -36,7 +37,7 @@ export const createApplication = async (req, res, next) => {
 
     try {
         const job = await Job.findById({ _id: jobID });
-        
+
         const newApplication = new JobApplication({
             name,
             email,
@@ -51,6 +52,44 @@ export const createApplication = async (req, res, next) => {
         newApplication.age = age;
         await newApplication.save();
         console.log(newApplication)
+        res.status(200).json(newApplication);
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ 'error': error })
+    }
+}
+export const createJoinApplication = async (req, res, next) => {
+    const {
+        name,
+        email,
+        mobile,
+        address,
+        // jobID,
+        age,
+        resume,
+        message,
+        specialities
+    } = req.body;
+
+    try {
+        // const job = await Job.findById({ _id: jobID });
+        const newApplication = new JoinApplication({
+            name,
+            email,
+            mobile,
+            address,
+            // job,
+            age,
+            resume,
+            message,
+            specialities
+        })
+
+        // const age = moment(newApplication.dateCreated).year() - moment(birthday).year()
+        // newApplication.age = age;
+
+        await newApplication.save();
+
         res.status(200).json(newApplication);
     } catch (error) {
         console.log(error);

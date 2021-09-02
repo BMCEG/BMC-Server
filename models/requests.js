@@ -1,21 +1,45 @@
 import mongoose from 'mongoose';
 
 const requestSchema = mongoose.Schema({
-  name: {
+  type: {
     type: String,
     required: true
   },
-  email: {
+  website: {
     type: String,
     required: true
   },
-  mobile: {
-    type: Number,
+  facebook: {
+    type: String,
     required: true
   },
-  isRead: {
-    type: Boolean,
-    default: false
+  instagram: {
+    type: String,
+    required: true
+  },
+  linkedin: {
+    type: String,
+    required: true
+  },
+  instagram: {
+    type: String,
+    required: true
+  },
+  twitter: {
+    type: String,
+    required: true
+  },
+  youtube: {
+    type: String,
+    required: true
+  },
+  goals: {
+    type: String,
+    required: true
+  },
+  challenges: {
+    type: String,
+    required: true
   },
   dateCreated: {
     type: Date,

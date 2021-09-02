@@ -1,5 +1,5 @@
 import express from 'express';
-import { getApplications, getApplication, createApplication, addResume } from '../controllers/jobApplications.js';
+import { getApplications, getApplication, createApplication, addResume, createJoinApplication } from '../controllers/jobApplications.js';
 import multer from "multer";
 
 const router = express.Router();
@@ -18,6 +18,7 @@ const upload = multer({ storage }).single("resume");
 router.get('/', getApplications);
 router.get('/:id', getApplication);
 router.post('/create', createApplication);
+router.post('/join', createJoinApplication);
 router.post("/addResume", upload, addResume);
 
 

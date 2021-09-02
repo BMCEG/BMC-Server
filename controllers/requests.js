@@ -21,16 +21,28 @@ export const getRequest = async (req, res, next) => {
 
 export const createRequest = async (req, res, next) => {
     const {
-        name,
-        email,
-        mobile
+        consultancyBusinessType,
+        consultancyBusinessWebsite,
+        consultancyBusinessFacebook,
+        consultancyBusinessLinkedIn,
+        consultancyBusinessInstagram,
+        consultancyBusinessTwitter,
+        consultancyBusinessYouTube,
+        consultancyBusinessGoals,
+        consultancyBusinessChallenges
     } = req.body;
-    console.log("here")
+
     try {
         const newRequest = new Request({
-            name,
-            email,
-            mobile
+            type: consultancyBusinessType,
+            website: consultancyBusinessWebsite,
+            facebook: consultancyBusinessFacebook,
+            linkedin: consultancyBusinessLinkedIn,
+            instagram: consultancyBusinessInstagram,
+            twitter: consultancyBusinessTwitter,
+            youtube: consultancyBusinessYouTube,
+            goals: consultancyBusinessGoals,
+            challenges: consultancyBusinessChallenges
         })
 
         await newRequest.save();
