@@ -28,28 +28,28 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use(morgan('dev'));
 
-app.use('/api/admins', adminRoutes);
-app.use('/api/albums', albumRoutes);
-app.use('/api/blogs', blogRoutes);
-app.use('/api/contacts', contactRoutes);
-app.use('/api/courses', coursesRoutes);
-app.use('/api/coursesApplications', courseApplicationRoutes);
-app.use('/api/jobs', jobRoutes);
-app.use('/api/jobsApplications', jobApplicationRoutes);
-app.use('/api/landing', landingRoutes);
-app.use('/api/newsletters', newsletterRoutes);
-app.use('/api/partners', partnersRoutes);
-app.use('/api/pictures', pictureRoutes);
-app.use('/api/requests', requestRoutes);
-app.use('/api/trainers', trainerRoutes);
+app.use('/admins', adminRoutes);
+app.use('/albums', albumRoutes);
+app.use('/blogs', blogRoutes);
+app.use('/contacts', contactRoutes);
+app.use('/courses', coursesRoutes);
+app.use('/coursesApplications', courseApplicationRoutes);
+app.use('/jobs', jobRoutes);
+app.use('/jobsApplications', jobApplicationRoutes);
+app.use('/landing', landingRoutes);
+app.use('/newsletters', newsletterRoutes);
+app.use('/partners', partnersRoutes);
+app.use('/pictures', pictureRoutes);
+app.use('/requests', requestRoutes);
+app.use('/trainers', trainerRoutes);
 app.use(apiErrorHandler);
-app.use('/api/', express.static('data'))
-app.use('/api/', express.static('images/partners'))
-app.use('/api/', express.static('images/blogs'))
-app.use('/api/', express.static('images'))
-app.use('/api/', express.static('images/gallery'))
-app.use('/api/', express.static('images/trainers'))
-app.use('/api/', express.static('data/resumes'))
+app.use('/images/', express.static('data'))
+app.use('/images/', express.static('images/partners'))
+app.use('/images/', express.static('images/blogs'))
+app.use('/images/', express.static('images'))
+app.use('/images/', express.static('images/gallery'))
+app.use('/images/', express.static('images/trainers'))
+app.use('/images/', express.static('data/resumes'))
 
 const CONNECTION_URL = 'mongodb+srv://bmcWebsiteProd:XAhBNptS4HbNfjQv@cluster0.druxa.mongodb.net/bmc-website-prod?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
