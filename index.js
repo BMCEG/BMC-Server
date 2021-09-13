@@ -2,10 +2,14 @@
 // dotenv.config();
 // import bodyParser from "body-parser";
 const bodyParser = require('body-parser');
-import express from "express";
-import mongoose from 'mongoose';
-import cors from "cors";
-import morgan from 'morgan';
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const morgan = require('morgan');
+// import express from "express";
+// import mongoose from 'mongoose';
+// import cors from "cors";
+// import morgan from 'morgan';
 import { apiErrorHandler } from './middlewares/apiErrorHandler.js';
 
 import adminRoutes from './routes/admins.js';
