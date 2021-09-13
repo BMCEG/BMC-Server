@@ -1,6 +1,7 @@
 // import dotenv from "dotenv";
 // dotenv.config();
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
+const bodyParser = require('body-parser');
 import express from "express";
 import mongoose from 'mongoose';
 import cors from "cors";
